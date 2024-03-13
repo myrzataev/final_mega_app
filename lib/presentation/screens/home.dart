@@ -26,6 +26,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    bool isDarkMode = context.watch<ThemeProvider>().isDarkMode;
     return Scaffold(
       backgroundColor: context.watch<ThemeProvider>().currentColor(),
       appBar: AppBar(
@@ -55,7 +56,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 return const SizedBox();
               },
             ),
-         
             Text(
               '${context.watch<CalcProvider>().number.toString()}',
               style: Theme.of(context).textTheme.headlineMedium,
@@ -84,7 +84,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           radius: 50,
                           child: InkWell(
                               onTap: () {
-                                context.read<CalcProvider>().increment();
+                                context
+                                    .read<CalcProvider>()
+                                    .increment(isDarkMode);
                               },
                               child: const Icon(
                                 Icons.add,
@@ -120,7 +122,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           radius: 50,
                           child: InkWell(
                               onTap: () {
-                                context.read<CalcProvider>().decrement();
+                                context
+                                    .read<CalcProvider>()
+                                    .decrement(isDarkMode);
                               },
                               child: const Icon(
                                 Icons.minimize,
