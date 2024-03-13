@@ -10,9 +10,10 @@ class GetWeatherUseCase {
         queryParameters: {
           "lat": 42.882004,
           "lon": 74.582748,
-          "appid": "9096b8fa3695ac9f14f966b36662a168"
+          "appid": "9096b8fa3695ac9f14f966b36662a168",
+          "units": "metric"
         });
-        print(response.data);
+    print(response.data);
     return WeatherModel.fromJson(response.data);
   }
 }
