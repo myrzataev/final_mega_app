@@ -78,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         )),
                   ),
                   const Spacer(),
-                  context.watch<CalcProvider>().number == 10
+                  context.watch<CalcProvider>().number >= 10
                       ? SizedBox()
                       : CircleAvatar(
                           radius: 50,
@@ -116,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         )),
                   ),
                   const Spacer(),
-                  context.watch<CalcProvider>().number == 0
+                  context.watch<CalcProvider>().number <= 0
                       ? SizedBox()
                       : CircleAvatar(
                           radius: 50,
