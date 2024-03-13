@@ -12,7 +12,7 @@ class CalcProvider extends ChangeNotifier {
     }
     if (number < 10) {
       number++;
-    } else if (number == 10) {
+    } else if (number >= 10) {
       isMax = true;
     }
     notifyListeners();
@@ -23,7 +23,7 @@ class CalcProvider extends ChangeNotifier {
       number = number - 2;
     } else if (number > 0) {
       number--;
-    } else if (number == 0) {
+    } else if (number <= 0) {
       isMin = true;
     }
     notifyListeners();
